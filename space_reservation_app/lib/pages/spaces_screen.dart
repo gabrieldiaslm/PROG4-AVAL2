@@ -10,7 +10,6 @@ class SpacesScreen extends StatefulWidget {
   const SpacesScreen({super.key});
 
   @override
-  // ignore: library_private_types_in_public_api
   _SpacesScreenState createState() => _SpacesScreenState();
 }
 
@@ -149,14 +148,14 @@ class _SpacesScreenState extends State<SpacesScreen> {
             }
 
             return ListView.builder(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
               itemCount: snapshot.data!.length,
               itemBuilder: (context, index) {
                 final space = snapshot.data![index];
                 final isActive = isSpaceActive(space);
 
                 return Container(
-                  margin: const EdgeInsets.only(bottom: 12),
+                  margin: const EdgeInsets.only(bottom: 8),
                   child: Material(
                     borderRadius: BorderRadius.circular(16),
                     elevation: 2,
@@ -177,7 +176,7 @@ class _SpacesScreenState extends State<SpacesScreen> {
                         }
                       },
                       child: Padding(
-                        padding: const EdgeInsets.all(16),
+                        padding: const EdgeInsets.all(12),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -196,8 +195,8 @@ class _SpacesScreenState extends State<SpacesScreen> {
                                 ),
                                 Container(
                                   padding: const EdgeInsets.symmetric(
-                                    horizontal: 12,
-                                    vertical: 6,
+                                    horizontal: 8,
+                                    vertical: 4,
                                   ),
                                   decoration: BoxDecoration(
                                     color: isActive
@@ -219,7 +218,7 @@ class _SpacesScreenState extends State<SpacesScreen> {
                                       ),
                                       const SizedBox(width: 4),
                                       Text(
-                                        isActive ? '' : 'Indisponível',
+                                        isActive ? 'Disponível' : 'Indisponível',
                                         style: TextStyle(
                                           color: isActive
                                               ? Colors.green
@@ -233,9 +232,9 @@ class _SpacesScreenState extends State<SpacesScreen> {
                                 ),
                               ],
                             ),
-                            const SizedBox(height: 12),
+                            const SizedBox(height: 8),
                             Container(
-                              padding: const EdgeInsets.all(12),
+                              padding: const EdgeInsets.all(8),
                               decoration: BoxDecoration(
                                 color: Theme.of(context)
                                     .colorScheme
@@ -289,7 +288,7 @@ class _SpacesScreenState extends State<SpacesScreen> {
           color: Theme.of(context).colorScheme.secondary,
           size: 24,
         ),
-        const SizedBox(height: 4),
+        const SizedBox(height: 2),
         Text(
           label,
           style: TextStyle(
