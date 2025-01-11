@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import '../models/space.dart';
-import 'space_details_screen.dart';
-import 'profile_screen.dart';
+import 'space_details.dart';
+import 'user_profile.dart';
 import '../services/space_service.dart';
 import '../services/event_bus.dart';
 
-class SpacesScreen extends StatefulWidget {
-  const SpacesScreen({super.key});
+class MainSpaces extends StatefulWidget {
+  const MainSpaces({super.key});
 
   @override
-  _SpacesScreenState createState() => _SpacesScreenState();
+  _MainSpacesState createState() => _MainSpacesState();
 }
 
-class _SpacesScreenState extends State<SpacesScreen> {
+class _MainSpacesState extends State<MainSpaces> {
   final SpaceService _spaceService = SpaceService();
   final _eventBus = SpaceEventBus();
   late StreamSubscription _subscription;
@@ -73,7 +73,7 @@ class _SpacesScreenState extends State<SpacesScreen> {
                 final result = await Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const ProfileScreen(),
+                    builder: (context) => const UserProfile(),
                   ),
                 );
 
@@ -166,8 +166,7 @@ class _SpacesScreenState extends State<SpacesScreen> {
                         final result = await Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) =>
-                                SpaceDetailsScreen(space: space),
+                            builder: (context) => SpaceDetails(space: space),
                           ),
                         );
 
@@ -218,7 +217,9 @@ class _SpacesScreenState extends State<SpacesScreen> {
                                       ),
                                       const SizedBox(width: 4),
                                       Text(
-                                        isActive ? 'Disponível' : 'Indisponível',
+                                        isActive
+                                            ? 'Disponível'
+                                            : 'Indisponível',
                                         style: TextStyle(
                                           color: isActive
                                               ? Colors.green

@@ -4,16 +4,16 @@ import '../models/reservation.dart';
 import '../services/space_service.dart';
 import '../services/reservation_service.dart';
 
-class SpaceDetailsScreen extends StatefulWidget {
+class SpaceDetails extends StatefulWidget {
   final Space space;
-  const SpaceDetailsScreen({super.key, required this.space});
+  const SpaceDetails({super.key, required this.space});
 
   @override
   // ignore: library_private_types_in_public_api
-  _SpaceDetailsScreenState createState() => _SpaceDetailsScreenState();
+  _SpaceDetailsState createState() => _SpaceDetailsState();
 }
 
-class _SpaceDetailsScreenState extends State<SpaceDetailsScreen> {
+class _SpaceDetailsState extends State<SpaceDetails> {
   final SpaceService _spaceService = SpaceService();
   final ReservationService _reservationService = ReservationService();
   late Future<List<Reservation>> _reservations;

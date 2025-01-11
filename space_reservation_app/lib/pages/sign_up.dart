@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import '../services/auth_service.dart';
 
-class SignupScreen extends StatefulWidget {
-  const SignupScreen({super.key});
+class SignUp extends StatefulWidget {
+  const SignUp({super.key});
 
   @override
   // ignore: library_private_types_in_public_api
-  _SignupScreenState createState() => _SignupScreenState();
+  _SignUpState createState() => _SignUpState();
 }
 
-class _SignupScreenState extends State<SignupScreen> {
+class _SignUpState extends State<SignUp> {
   final _formKey = GlobalKey<FormState>();
   final _usernameController = TextEditingController();
   final _emailController = TextEditingController();
@@ -103,7 +103,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     controller: _usernameController,
                     decoration: InputDecoration(
                       labelText: 'Nome de usuário',
-                      hintText: 'Seu nome de usuário',
+                      hintText: 'Nome de usuário',
                       prefixIcon:
                           Icon(Icons.person_outline, color: Colors.grey[600]),
                       border: OutlineInputBorder(
@@ -138,7 +138,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     controller: _emailController,
                     decoration: InputDecoration(
                       labelText: 'Email',
-                      hintText: 'seu@email.com',
+                      hintText: 'usuario@email.com',
                       prefixIcon:
                           Icon(Icons.email_outlined, color: Colors.grey[600]),
                       border: OutlineInputBorder(
@@ -174,7 +174,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     controller: _passwordController,
                     decoration: InputDecoration(
                       labelText: 'Senha',
-                      hintText: '••••••',
+                      hintText: '',
                       prefixIcon:
                           Icon(Icons.lock_outline, color: Colors.grey[600]),
                       border: OutlineInputBorder(

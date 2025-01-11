@@ -1,11 +1,11 @@
 // ignore_for_file: avoid_print
 
 import 'package:flutter/material.dart';
-import 'firebase_config.dart';
-import 'pages/login_screen.dart';
-import 'pages/signup_screen.dart';
-import 'pages/spaces_screen.dart';
-import 'theme/theme_manager.dart';
+import '../app/firebase_config.dart';
+import 'pages/sign_in.dart';
+import 'pages/sign_up.dart';
+import 'pages/spaces_main.dart';
+import '../app/app_theme.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,14 +25,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Sistema de Reservas',
+      title: 'Reserva de Espaços',
       debugShowCheckedModeBanner: false,
       theme: appTheme,
-      home: const LoginScreen(),
+      home: const SignIn(),
       routes: {
-        '/login': (context) => const LoginScreen(),
-        '/signup': (context) => const SignupScreen(),
-        '/spaces': (context) => const SpacesScreen(),
+        '/login': (context) => const SignIn(),
+        '/signup': (context) => const SignUp(),
+        '/spaces': (context) => const MainSpaces(),
       },
     );
   }

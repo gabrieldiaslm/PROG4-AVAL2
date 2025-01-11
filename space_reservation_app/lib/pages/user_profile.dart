@@ -5,14 +5,14 @@ import '../services/space_service.dart';
 import '../models/reservation.dart';
 import '../models/space.dart';
 
-class ProfileScreen extends StatefulWidget {
-  const ProfileScreen({super.key});
+class UserProfile extends StatefulWidget {
+  const UserProfile({super.key});
 
   @override
-  State<ProfileScreen> createState() => _ProfileScreenState();
+  State<UserProfile> createState() => _UserProfileState();
 }
 
-class _ProfileScreenState extends State<ProfileScreen> {
+class _UserProfileState extends State<UserProfile> {
   final ReservationService _reservationService = ReservationService();
   final SpaceService _spaceService = SpaceService();
   final AuthService _authService = AuthService();
@@ -232,7 +232,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 children: [
                   Row(
                     children: [
-                      
                       Text(
                         'Minhas Reservas',
                         style: Theme.of(context).textTheme.titleLarge?.copyWith(
@@ -324,7 +323,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                             borderRadius:
                                                 BorderRadius.circular(8),
                                           ),
-                                          
                                         ),
                                         const SizedBox(width: 12),
                                         Expanded(

@@ -3,14 +3,14 @@ import '../models/system_log.dart';
 import '../services/log_service.dart';
 import 'package:intl/intl.dart';
 
-class SystemLogsScreen extends StatefulWidget {
-  const SystemLogsScreen({super.key});
+class SysLogs extends StatefulWidget {
+  const SysLogs({super.key});
 
   @override
-  State<SystemLogsScreen> createState() => _SystemLogsScreenState();
+  State<SysLogs> createState() => _SysLogsState();
 }
 
-class _SystemLogsScreenState extends State<SystemLogsScreen> {
+class _SysLogsState extends State<SysLogs> {
   final LogService _logService = LogService();
   List<SystemLog> _logs = [];
   bool _isLoading = true;
